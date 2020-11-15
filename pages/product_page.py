@@ -19,8 +19,8 @@ class ProductPage(BasePage):
 
     def added_product_should_has_the_same_title(self, product_title):
         success_adding_message_element = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE)
-        assert product_title in success_adding_message_element.text, \
-            'Another product added'
+        assert product_title == success_adding_message_element.text, \
+            'Product title not equal title in success message'
 
     def should_be_product_price_message_in_basket(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_PRICE_FROM_BASKET_MESSAGE), \
