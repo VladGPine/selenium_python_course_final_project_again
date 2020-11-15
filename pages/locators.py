@@ -12,3 +12,11 @@ class LoginPageLocators:
     SUBMIT_LOGIN_BUTTON = (By.CSS_SELECTOR, 'button[name="login_submit"]')
 
     REGISTER_FORM_ELEMENT = (By.CSS_SELECTOR, '#register_form')
+
+
+class ProductPageLocators:
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, 'button.btn-add-to-basket')
+    PRODUCT_TITLE = (By.CSS_SELECTOR, 'h1')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, '#messages strong')
+    PRODUCT_PRICE = (By.CSS_SELECTOR, 'p.price_color')
+    PRODUCT_PRICE_FROM_BASKET_MESSAGE = (By.CSS_SELECTOR, '.alert-info strong')
