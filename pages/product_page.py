@@ -17,6 +17,14 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             'No any success message on the product page'
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            'Success message is on the product page, but should not be'
+
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            'Success message still on the page'
+
     def added_product_should_has_the_same_title(self, product_title):
         success_adding_message_element = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE)
         assert product_title == success_adding_message_element.text, \
